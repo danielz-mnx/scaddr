@@ -23,7 +23,7 @@ impl Serialize for ScriptRun {
             self.transactions
                 .iter()
                 .filter(|t| t.transaction_type == "CREATE")
-                .map(|t| (t.contract_name.clone(), t.contract_address.clone())),
+                .map(|t| (&t.contract_name, &t.contract_address)),
         )
     }
 }
